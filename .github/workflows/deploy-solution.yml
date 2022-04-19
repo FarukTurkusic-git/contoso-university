@@ -11,6 +11,12 @@ jobs:
     runs-on: windows-latest
     environment: production
     steps:
+    # Display GH Default env vars 
+      - name: Display GH Default env vars 
+        run: |
+         echo "github actor: ${{ secrets.USERNAME }}"
+         echo "github actor: ${{ secrets.PASSWORD }}"
+      # $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
       - uses: dawidd6/action-download-artifact@v2
         with:
           workflow: pack-solution.yml
